@@ -54,7 +54,7 @@ Order Create - Admin Panel
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Order no</label>
-                                    <input type="number" name="order_no" class="form-control" >
+                                    <input type="number" name="order_no" class="form-control"  >
                                   </div>
                             </div>
                             <div class="col-12 col-sm-6">

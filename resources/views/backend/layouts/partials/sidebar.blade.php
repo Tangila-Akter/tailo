@@ -57,18 +57,21 @@
                     </li>
                     @endif
 
-
+                    
                     @if ($usr->can('sms.create') || $usr->can('sms.view') ||  $usr->can('sms.edit') ||  $usr->can('sms.delete'))
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-tasks"></i><span>
                             SMS
                         </span></a>
-                        <ul class="collapse {{ Route::is('admin.roles.create') || Route::is('admin.roles.index') || Route::is('admin.roles.edit') || Route::is('admin.roles.show') ? 'in' : '' }}">
+                        <ul class="collapse {{ Route::is('admin.sms.create') || Route::is('admin.sms.index') || Route::is('admin.sms.edit') || Route::is('admin.sms.show') ? 'in' : '' }}">
                             @if ($usr->can('sms.view'))
-                                <li class="{{ Route::is('admin.roles.index')  || Route::is('admin.roles.edit') ? 'active' : '' }}"><a href="{{ route('admin.roles.index') }}">SMS</a></li>
+                                <li class="{{ Route::is('admin.sms.index')  || Route::is('admin.sms.edit') ? 'active' : '' }}"><a href="{{ route('admin.sms.index') }}">SMS</a></li>
                             @endif
                             @if ($usr->can('sms.create'))
-                                <li class="{{ Route::is('admin.roles.create')  ? 'active' : '' }}"><a href="{{ route('admin.roles.create') }}">Create SMS</a></li>
+                                <li class="{{ Route::is('admin.sms.multi')  ? 'active' : '' }}"><a href="{{ route('admin.sms.multi') }}">Mutiple SMS</a></li>
+                            @endif
+                            @if ($usr->can('sms.create'))
+                                <li class="{{ Route::is('admin.sms.create')  ? 'active' : '' }}"><a href="{{ route('admin.sms.create') }}">Single SMS</a></li>
                             @endif
                         </ul>
                     </li>

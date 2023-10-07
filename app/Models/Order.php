@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','order_no', 'phone', 'email', 'address', 'up_long', 'up_body', 'up_bodyLose', 'pat',
-                            'put', 'hattarLomba', 'hattarMuk', 'kaf', 'gola', 'plate_fara', 'collar_choura', 'plate_choura',
-                            'ghar', 'hif', 'nich_hata', 'madani_fara', 'mota_mor', 'hata_pasting', 'up_pocket', 'up_collar',
-                            'up_gola', 'up_plate', 'up_pasting', 'up_lace', 'up_ful', 'up_button', 'low_long', 'low_muk',
-                            'low_hie', 'low_ghar', 'low_komor', 'low_belt', 'low_hif', 'low_pocket', 'cost', 'nogod',
-                            'order_date', 'd_date', 'up_message', 'low_message'
-];
+//     protected $fillable = ['name','order_no', 'phone', 'email', 'address', 'up_long', 'up_body', 'up_bodyLose', 'pat',
+//                             'put', 'hattarLomba', 'hattarMuk', 'kaf', 'gola', 'plate_fara', 'collar_choura', 'plate_choura',
+//                             'ghar', 'hif', 'nich_hata', 'madani_fara', 'mota_mor', 'hata_pasting', 'up_pocket', 'up_collar',
+//                             'up_gola', 'up_plate', 'up_pasting', 'up_lace', 'up_ful', 'up_button', 'low_long', 'low_muk',
+//                             'low_hie', 'low_ghar', 'low_komor', 'low_belt', 'low_hif', 'low_pocket', 'cost', 'nogod',
+//                             'order_date', 'd_date', 'up_message', 'low_message'
+// ];
+protected $guarded=[];
 
     public function setup_pocketAttribute($order)
     {

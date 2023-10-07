@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Backend\SmsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +42,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('order', 'OrderController', ['names' => 'admin.order']);
     Route::resource('stuff', 'Backend\StuffController', ['names' => 'admin.stuff']);
     Route::resource('account', 'Backend\AccountController', ['names' => 'admin.account']);
+    Route::resource('sms', 'Backend\SmsController', ['names' => 'admin.sms']);
+    Route::get('multi', [SmsController::class, 'multi'])->name('admin.sms.multi');
 
 
     // Login Routes

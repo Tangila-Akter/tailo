@@ -2,7 +2,7 @@
 @extends('backend.layouts.master')
 
 @section('title')
-Order - Admin Panel
+Plate - Admin Panel
 @endsection
 
 @section('styles')
@@ -21,10 +21,10 @@ Order - Admin Panel
     <div class="row align-items-center">
         <div class="col-sm-6">
             <div class="breadcrumbs-area clearfix">
-                <h4 class="page-title pull-left">Order list</h4>
+                <h4 class="page-title pull-left">Plate</h4>
                 <ul class="breadcrumbs pull-left">
                     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                    <li><span>All Order</span></li>
+                    <li><span>All Plate</span></li>
                 </ul>
             </div>
         </div>
@@ -41,9 +41,9 @@ Order - Admin Panel
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title float-left">অর্ডার List</h4>
+                    <h4 class="header-title float-left">Plate List</h4>
                     <p class="float-right mb-2">
-                        <a class="btn btn-primary text-white" href="{{ route('admin.ful.create') }}">Create New Ful</a>
+                        <a class="btn btn-primary text-white" href="{{ route('admin.plate.create') }}">Create New Plate</a>
                     </p>
                     <div class="clearfix"></div>
                     <div class="data-tables">
@@ -52,31 +52,24 @@ Order - Admin Panel
                             <thead class="bg-light text-capitalize">
                                 <tr>
                                     <th width="5%">Sl</th>
-                                    <th width="10%">অর্ডার নং</th>
-                                    <th width="10%">গ্রাহকের তথ্য</th>
-                                    <th width="10%">পোশাকের বিবরণ</th>
-                                    <th width="10%">অর্ডারের তারিখ</th>
-                                    <th width="10%">ডেলিভারির তারিখ</th>
-                                    <th width="10%">মোট বিল</th>
-                                    <th width="10%">জমার পরিমাণ </th>
-                                    <th width="10%">বাকি </th>
-                                    <th width="10%">Action</th>
+                                    <th width="10%">Name</th>
+                                    <th width="15%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               @foreach ($ful as $ful)
+                               @foreach ($plate as $plate)
                                <tr>
                                     <td>{{ $loop->index+1 }}</td>
-                                    <td>{{ $ful->name }}</td>
+                                    <td>{{ $plate->name }}</td>
                                     <td>
-                                        <a class="btn btn-success text-white" href="{{ route('admin.ful.edit', $ful->id) }}">Edit</a>
+                                        <a class="btn btn-success text-white" href="{{ route('admin.plate.edit', $plate->id) }}">Edit</a>
 
-                                        <a class="btn btn-danger text-white" href="{{ route('admin.ful.destroy', $ful->id) }}"
-                                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ $ful->id }}').submit();">
+                                        <a class="btn btn-danger text-white" href="{{ route('admin.plate.destroy', $plate->id) }}"
+                                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ $plate->id }}').submit();">
                                             Delete
                                         </a>
 
-                                        <form id="delete-form-{{ $ful->id }}" action="{{ route('admin.ful.destroy', $ful->id) }}" method="POST" style="display: none;">
+                                        <form id="delete-form-{{ $plate->id }}" action="{{ route('admin.plate.destroy', $plate->id) }}" method="POST" style="display: none;">
                                             @method('DELETE')
                                             @csrf
                                         </form>
